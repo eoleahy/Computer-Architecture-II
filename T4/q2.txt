@@ -1,0 +1,22 @@
+ALU Forwarding:
+r1 - 15
+clock cycles - 10
+
+No ALU Forwarding:
+r1 - 15
+clock cycles - 18
+
+ALU w/ CPU ddi disabled
+r1 - 15
+clock cycles - 10
+
+
+
+Q3 i) - instructions = 39
+      - clk cycles = 51
+
+   ii) - instructions = 39
+       - clk cycles = 53
+
+  iii) - instructions = 69
+       - clk cycles = 84 

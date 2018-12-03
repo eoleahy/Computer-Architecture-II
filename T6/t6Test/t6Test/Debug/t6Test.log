@@ -1,0 +1,5 @@
+﻿  helper.cpp
+c:\users\eoin9\desktop\folder\comparch1\t6\t6test\t6test\helper.cpp(992): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  matrixMultiply.cpp
+c:\users\eoin9\desktop\folder\comparch1\t6\t6test\t6test\matrixmultiply.cpp(145): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Generating Code...

@@ -1,0 +1,34 @@
+min:  add r26,r0,r1 ; v = a
+      sub r27,r1,r0 {C}   ; if (b < V)
+      jge min0
+      xor r0, r0, r0  ; nop in delay slot
+      add r27, r0, r1 ; v = b
+min0: sub r28, r1, r0 {C}; if(c < v)
+      jge min1
+      xor r0, r0, r0 ;nop in delay slot
+      add r28, r0, r1; v=c
+min1: ret r25, 0    ;return
+      xor r0, r0, r0 ;nop in delay slot
+
+p:    add r9, r0, r10   ;p param(1) = g
+      add r26, r0, r11  ;p param(2) = i
+      callr r25, min ; call min(g,i,j)
+      add r27,r0,r12  ;p param(3) = j
+      add r1,r10,r10  ; p param(1) = min(g,i,j)
+      add r28, r0, r11 ; p param(2) = k
+      callr r25, min  ;min
+      add r29, r0, r12  ;p param(3) l
+      ret r25, 0
+      xor r0, r0, r0  ;nop in delay slot
+
+gcd:  sub r27, r0,r1{C} ; if (b == 0
+      je gcd0
+      add r27, r0, r10  ; gcd param(1) = b
+      mod r26, r27, r11  ; gcd param(2) = a%b
+      callr r25 gcd   ; gcd(b, a%b)
+      xor r0,r0,r0    ;nop in delay slot
+      ret r25,0
+      xor r0,r0,r0    ;nop in delay slot
+gcd0: add r26, r0, r1 ;return value = a
+      ret r25,0
+      xor r0,r0,r0    ;nop in del slot
